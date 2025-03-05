@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     let imageList = [];
     
-    // Generate image names from "photo (1).jpg" to "photo (222).jpg"
+    // Generate image names from "photo-1.jpg" to "photo-222.jpg"
     for (let i = 1; i <= 222; i++) {
-        imageList.push(`photo (${i}).jpg`);
+        imageList.push(`photo-${i}.jpg`);
     }
 
     function getRandomImages(count) {
