@@ -1,7 +1,10 @@
-/* Import the Lora font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+/* Import your custom font */
+@font-face {
+    font-family: 'OSP-DIN';
+    src: url('OSP-DIN.ttf') format('truetype');
+}
 
-/* General styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,7 +12,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Navigation styles */
+/* Navigation Bar */
 .nav {
     position: fixed;
     top: 0;
@@ -27,7 +30,7 @@ body {
     font-size: 18px;
 }
 
-/* Hero section styles */
+/* Hero Section */
 .hero {
     display: flex;
     width: 100vw;
@@ -43,29 +46,44 @@ body {
     background-position: center;
 }
 
-/* Title text (Updated to match Forest Carbon Works) */
+/* Hero Title */
 .hero-title {
-    font-family: 'Lora', serif;
-    font-size: 64px; /* Increased title size */
+    font-family: 'OSP-DIN', sans-serif;
+    font-size: 72px; /* Increased size */
     color: white;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 20%; /* Moved closer to nav */
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* Section styles */
+/* Section Styling */
 .section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 80px 20px;
     text-align: center;
     font-size: 24px;
 }
 
-/* Image divider styles */
+/* Expandable Text */
+.full-text {
+    display: none;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Read More / Read Less */
+.read-more, .read-less {
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.read-more:hover, .read-less:hover {
+    text-decoration: underline;
+}
+
+/* Image Divider */
 .image-divider {
     display: flex;
     width: 100vw;
@@ -80,7 +98,20 @@ body {
     background-position: center;
 }
 
-/* Mobile responsiveness */
+/* Logos in About Section */
+.logos {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.logos img {
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -90,7 +121,14 @@ body {
         width: 100%;
         height: 200px;
     }
+    .hero-title {
+        font-size: 48px;
+        top: 15%;
+    }
     .image-divider {
         height: 80px;
+    }
+    .logos {
+        justify-content: center;
     }
 }
