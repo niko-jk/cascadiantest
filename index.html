@@ -3,81 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cascadian Forestry - Wireframe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        .nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: black;
-        }
-        .section {
-            height: 100vh;
-            border-bottom: 2px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px;
-            background: #bbb;
-        }
-        .hero div {
-            width: 32%;
-            height: 300px;
-            background: #888;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-            }
-            .hero div {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <title>Cascadian Forestry</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <div class="nav">
+    <!-- Navigation -->
+    <nav class="nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#expertise">Expertise</a>
         <a href="#unique">Unique Angle</a>
         <a href="#contact">Contact</a>
-    </div>
+    </nav>
 
-    <div class="hero">
-        <div>Image 1</div>
-        <div>Image 2</div>
-        <div>Image 3</div>
-    </div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-image" id="hero1"></div>
+        <div class="hero-image" id="hero2"></div>
+        <div class="hero-image" id="hero3"></div>
+        <div class="hero-title">Cascadian Forestry</div>
+    </header>
 
-    <div id="about" class="section">About Section</div>
-    <div id="services" class="section">Services Section</div>
-    <div id="expertise" class="section">Expertise Section</div>
-    <div id="unique" class="section">Unique Angle Section</div>
-    <div id="contact" class="section">Contact Section</div>
+    <!-- Sections -->
+    <div id="about" class="section">About Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <div class="image-divider" id="divider1"></div>
+
+    <div id="services" class="section">Services Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <div class="image-divider" id="divider2"></div>
+
+    <div id="expertise" class="section">Expertise Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <div class="image-divider" id="divider3"></div>
+
+    <div id="unique" class="section">Unique Angle Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <div class="image-divider" id="divider4"></div>
+
+    <div id="contact" class="section">Contact Section <p>Lorem ipsum dolor sit amet...</p></div>
 
 </body>
 </html>
