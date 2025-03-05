@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setImage(elementId, imageUrl) {
         let img = new Image();
-        img.src = imageUrl;
+        img.src = `images/${imageUrl}`;
         img.onload = function () {
-            document.getElementById(elementId).style.backgroundImage = `url('images/${imageUrl}')`;
+            document.getElementById(elementId).style.backgroundImage = `url('${img.src}')`;
         };
         img.onerror = function () {
-            console.error(`Error loading image: ${imageUrl}`);
+            console.error(`Error loading image: ${img.src}`);
         };
     }
 
     // Set hero images
     let heroImages = getRandomImages(3);
-    setImage("hero1", `images/${heroImages[0]}`);
-    setImage("hero2", `images/${heroImages[1]}`);
-    setImage("hero3", `images/${heroImages[2]}`);
+    setImage("hero1", heroImages[0]);
+    setImage("hero2", heroImages[1]);
+    setImage("hero3", heroImages[2]);
 
     // Set divider images
     for (let i = 1; i <= 5; i++) {
@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             let target = document.getElementById(this.dataset.target);
             target.style.display = "block";
+            target.style.maxHeight = "1000px";
+            target.style.transition = "max-height 0.5s ease-in-out";
             this.style.display = "none";
         });
     });
@@ -48,13 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".read-less").forEach(button => {
         button.addEventListener("click", function () {
             let target = document.getElementById(this.dataset.target);
-            target.style.display = "none";
+            target.style.maxHeight = "0px";
+            setTimeout(() => { target.style.display = "none"; }, 500);
             document.querySelector(`[data-target='${this.dataset.target}']`).style.display = "inline";
         });
     });
 
-    // Smooth scrolling
-    document.querySelectorAll(".nav a").forEach(anchor => {
+    // Smooth scrolling for menu
+    document.querySelectorAll(".nav-links a").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
             let target = document.querySelector(this.getAttribute("href"));
