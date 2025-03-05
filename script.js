@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let totalImages = 222; // Total number of images available
     let imageList = [];
-    
-    // Generate image names from "photo-1.jpg" to "photo-222.jpg"
-    for (let i = 1; i <= 222; i++) {
+
+    // Generate filenames from "photo-1.jpg" to "photo-222.jpg"
+    for (let i = 1; i <= totalImages; i++) {
         imageList.push(`photo-${i}.jpg`);
     }
 
@@ -11,11 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return shuffled.slice(0, count);
     }
 
+    function setImage(elementId, imageUrl) {
+        let img = new Image();
+        img.src = imageUrl;
+        img.onload = function () {
+            document.getElementById(elementId).style.backgroundImage = `url('${imageUrl}')`;
+        };
+        img.onerror = function () {
+            console.error(`Error loading image: ${imageUrl}`);
+        };
+    }
+
     // Set hero images
     let heroImages = getRandomImages(3);
-    document.getElementById("hero1").style.backgroundImage = `url('images/${heroImages[0]}')`;
-    document.getElementById("hero2").style.backgroundImage = `url('images/${heroImages[1]}')`;
-    document.getElementById("hero3").style.backgroundImage = `url('images/${heroImages[2]}')`;
+    setImage("hero1", `images/${heroImages[0]}`);
+    setImage("hero2", `images/${heroImages[1]}`);
+    setImage("hero3", `images/${heroImages[2]}`);
 
     // Set divider images
     for (let i = 1; i <= 4; i++) {
