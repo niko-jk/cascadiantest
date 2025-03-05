@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let imageList = [
-        "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
-        "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg"
-    ];
+    let imageList = [];
+    
+    // Generate image names from "photo (1).jpg" to "photo (222).jpg"
+    for (let i = 1; i <= 222; i++) {
+        imageList.push(`photo (${i}).jpg`);
+    }
 
     function getRandomImages(count) {
         let shuffled = [...imageList].sort(() => 0.5 - Math.random());
