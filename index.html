@@ -4,42 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascadian Forestry</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-     <!-- Navigation -->
     <nav class="nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#expertise">Expertise</a>
-        <a href="#unique">Unique Angle</a>
+        <a href="#wildfire">Wildfire Risk</a>
+        <a href="#climate">Climate & Forest Resilience</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-image" id="hero1"></div>
-        <div class="hero-image" id="hero2"></div>
-        <div class="hero-image" id="hero3"></div>
-        <div class="hero-title">Cascadian Forestry</div>
+        <div id="hero1" class="hero-image"></div>
+        <div id="hero2" class="hero-image"></div>
+        <div id="hero3" class="hero-image"></div>
+        <h1 class="hero-title">Cascadian Forestry</h1>
     </header>
 
-    <!-- Sections -->
-    <div id="about" class="section">About Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p class="summary">Cascadian Forestry specializes in forest data collection and analysis to support sustainable land management. [<span class="read-more" data-target="about-content">Read More</span>]</p>
+        <div class="full-text" id="about-content">
+            <p>Cascadian Forestry specializes in data collection and analysis to support the understanding, management, and preservation of forests for long-term ecosystem health and resilience...</p>
+            <div class="logos">
+                <img src="SAF1.png" alt="SAF Logo">
+                <img src="TWS1.png" alt="TWS Logo">
+            </div>
+            <span class="read-less" data-target="about-content">Read Less</span>
+        </div>
+    </section>
+
     <div class="image-divider" id="divider1"></div>
 
-    <div id="services" class="section">Services Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <p class="summary">From forest inventory and wildfire risk assessment to GIS mapping, we offer expert services. [<span class="read-more" data-target="services-content">Read More</span>]</p>
+        <div class="full-text" id="services-content">
+            <p>At Cascadian Forestry, we provide a comprehensive suite of data-driven forestry services to support landowners, conservationists, and industry professionals...</p>
+            <span class="read-less" data-target="services-content">Read Less</span>
+        </div>
+    </section>
+
     <div class="image-divider" id="divider2"></div>
 
-    <div id="expertise" class="section">Expertise Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <section id="expertise" class="section">
+        <h2>Expertise</h2>
+        <p class="summary">Led by forester and former wildland firefighter Nicholas Kwiatkowski, we bring deep industry knowledge. [<span class="read-more" data-target="expertise-content">Read More</span>]</p>
+        <div class="full-text" id="expertise-content">
+            <p>Cascadian Forestry is founded and operated by Nicholas Kwiatkowski, an experienced forester, project manager, and former wildland firefighter...</p>
+            <span class="read-less" data-target="expertise-content">Read Less</span>
+        </div>
+    </section>
+
     <div class="image-divider" id="divider3"></div>
 
-    <div id="unique" class="section">Unique Angle Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <section id="wildfire" class="section">
+        <h2>Wildfire Risk & Mitigation</h2>
+        <p class="summary">Combining field experience with fire science, we help landowners assess fire risks. [<span class="read-more" data-target="wildfire-content">Read More</span>]</p>
+        <div class="full-text" id="wildfire-content">
+            <p>With a background in wildland firefighting and forest ecology, Cascadian Forestry brings a unique perspective to wildfire risk assessment and mitigation planning...</p>
+            <span class="read-less" data-target="wildfire-content">Read Less</span>
+        </div>
+    </section>
+
     <div class="image-divider" id="divider4"></div>
 
-    <div id="contact" class="section">Contact Section <p>Lorem ipsum dolor sit amet...</p></div>
+    <section id="climate" class="section">
+        <h2>Climate Change & Forest Resilience</h2>
+        <p class="summary">We integrate climate models and ecological data to guide resilient forest management. [<span class="read-more" data-target="climate-content">Read More</span>]</p>
+        <div class="full-text" id="climate-content">
+            <p>As a Pacific Northwest-based forestry company, Cascadian Forestry has witnessed firsthand the shifting dynamics of regional ecosystems due to climate change...</p>
+            <span class="read-less" data-target="climate-content">Read Less</span>
+        </div>
+    </section>
 
+    <div class="image-divider" id="divider5"></div>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>📍 Nicholas Kwiatkowski</p>
+        <p>📞 [Your Phone Number]</p>
+        <p>📧 [Your Email Address]</p>
+        <p>📬 [Your Mailing Address]</p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
