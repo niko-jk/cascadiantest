@@ -7,7 +7,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f6fff0; /* Very faint green */
+    background-color: #eef9e4; /* Slightly greener */
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevents horizontal scrolling */
@@ -38,6 +38,11 @@ body {
     color: white;
     text-decoration: none;
     font-size: 12px;
+}
+
+.nav-links {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .nav-links a {
@@ -73,6 +78,7 @@ body {
     top: 15%; /* Moved closer to nav */
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #eef9e4; /* Slight green tint instead of pure white */
 }
 
 /* Section Styling */
@@ -95,6 +101,8 @@ body {
     display: none;
     margin-top: 10px;
     font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* Read More / Read Less */
@@ -112,7 +120,7 @@ body {
 .image-divider {
     display: flex;
     width: 100vw;
-    height: 200px; /* Increased for square images */
+    height: 250px; /* Adjusted height for square images */
     overflow: hidden;
 }
 
@@ -135,7 +143,7 @@ body {
 
 .contact-logo-container img {
     width: auto;
-    height: 50px; /* Resized logo */
+    height: 250px; /* Increased logo size */
     margin-bottom: 10px;
 }
 
@@ -172,7 +180,7 @@ body {
         top: 12%;
     }
     .image-divider {
-        height: 100px;
+        height: 125px;
     }
     .logos {
         flex-direction: column;
