@@ -1,4 +1,3 @@
-// Ensure unique images per page load
 document.addEventListener("DOMContentLoaded", function () {
     const totalImages = 222;
     let selectedImages = new Set();
@@ -21,21 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
         div.style.backgroundImage = `url('${getRandomImage()}')`;
     });
 
-    // Handle section expansion with smooth fade and slide effects
+    // Smooth section expansion
     document.querySelectorAll(".read-more").forEach(button => {
         button.addEventListener("click", function () {
             let targetId = this.getAttribute("data-target");
             let fullText = document.getElementById(targetId);
             let section = this.closest(".section");
 
-            this.style.opacity = "0";
-            setTimeout(() => this.style.display = "none", 400);
-
+            this.style.display = "none";
             fullText.style.display = "block";
-            setTimeout(() => {
-                fullText.style.opacity = "1";
-                section.style.maxHeight = section.scrollHeight + "px";
-            }, 50);
         });
     });
 
@@ -45,15 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let fullText = document.getElementById(targetId);
             let section = this.closest(".section");
 
-            fullText.style.opacity = "0";
-            setTimeout(() => {
-                fullText.style.display = "none";
-                section.style.maxHeight = "initial";
-            }, 400);
-
+            fullText.style.display = "none";
             let readMoreButton = document.querySelector(`.read-more[data-target='${targetId}']`);
             readMoreButton.style.display = "inline";
-            setTimeout(() => readMoreButton.style.opacity = "1", 50);
         });
     });
 
