@@ -1,144 +1,51 @@
-/* Import Custom Font */
-@font-face {
-    font-family: 'OSP-DIN';
-    src: url('OSP-DIN.ttf') format('truetype');
+/* Ensure better mobile compatibility */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 48px; /* Adjust for mobile */
+    }
+    .nav-links a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    .section {
+        padding: 40px 10px;
+    }
 }
 
-/* General Styles */
+/* Ensure fixed navbar doesn't overlap content */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eef9e4; /* Slightly greener */
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    color: #2f4221; /* Dark green text */
+    padding-top: 60px; 
+    scroll-behavior: smooth;
 }
 
-/* Navigation Bar */
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #eef9e4; /* Light green text */
-    z-index: 1000;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 15px;
-}
-
-.contact-info a {
-    color: #eef9e4; /* Light green */
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.nav-links {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #eef9e4; /* Light green */
-    font-size: 18px;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    width: 100vw;
-    height: 450px;
-    overflow: hidden;
-    position: relative;
-}
-
-.hero-image {
-    width: 33.3%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Hero Title */
-.hero-title {
-    font-family: 'OSP-DIN', sans-serif;
-    font-size: 96px; /* Increased size */
-    color: #eef9e4; /* Slight green tint */
-    text-align: center;
-    position: absolute;
-    top: 50%; /* Vertically centered */
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Section Styling */
-.section {
-    padding: 80px 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Alternate Text Justification */
-.left-align { text-align: left; align-items: flex-start; }
-.right-align { text-align: right; align-items: flex-end; }
-
-/* Section Titles */
-.section-title {
-    font-family: 'OSP-DIN', sans-serif;
-}
-
-/* Expandable Text */
+/* Improve expand/collapse transition */
 .full-text {
     display: none;
-    margin-top: 10px;
-    font-size: 18px;
+    max-height: 0;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
-}
-
-/* Read More / Read Less */
-.read-more, .read-less {
-    color: #2f4221; /* Dark green text */
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.read-more:hover, .read-less:hover {
-    text-decoration: underline;
-}
-
-/* Image Divider */
-.image-divider {
-    display: flex;
-    width: 100vw;
-    height: 250px; /* Adjusted height for square images */
-    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .image-divider div {
-    width: 20%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Copyright Text */
-.copyright {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
+.image-divider div:hover {
+    transform: scale(1.05);
+}
+
+/* Optimize font loading */
+@font-face {
+    font-family: 'OSP-DIN';
+    src: url('OSP-DIN.ttf') format('truetype');
+    font-display: swap; /* Prevents invisible text */
+}
+
+/* Improve button hover */
+.read-more, .read-less {
+    transition: color 0.3s ease-in-out;
+}
+
+.read-more:hover, .read-less:hover {
+    color: #3a5d25;
 }
