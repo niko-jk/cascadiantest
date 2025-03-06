@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
         imageList.push(`photo-${i}.jpg`);
     }
 
-    function getRandomImages(count) {
-        let shuffled = [...imageList].sort(() => 0.5 - Math.random());
+    function getRandomImages(count, minSizeKB = 150) {
+        let validImages = imageList.filter(img => parseInt(img.replace(/\D/g, "")) > minSizeKB);
+        let shuffled = [...validImages].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     }
 
@@ -36,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let target = document.getElementById(this.dataset.target);
             target.style.display = "block";
             target.style.maxHeight = "1000px";
-            target.style.transition = "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out";
             target.style.opacity = "1";
             this.style.display = "none";
         });
@@ -59,4 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
         });
     });
+
+    // Auto-update copyright year
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
 });
