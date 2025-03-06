@@ -8,25 +8,32 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #eef9e4; /* Slightly greener */
+    background-color: #eef9e4;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    color: #2f4221; /* Dark green text */
+    overflow-x: hidden;
+    color: #2f4221;
+    scroll-behavior: smooth;
 }
 
-/* Navigation Bar */
+/* 🟢 Navbar Adjustments */
 .nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #eef9e4; /* Light green text */
+    color: #eef9e4;
     z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; /* Centers navigation items */
 }
 
 .contact-info {
@@ -36,31 +43,14 @@ body {
     margin-left: 15px;
 }
 
-.contact-info a {
-    color: #eef9e4;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.nav-links {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #eef9e4;
-    font-size: 18px;
-}
-
-/* Hero Section */
+/* 🟢 Hero Section Fixes */
 .hero {
     display: flex;
     width: 100vw;
     height: 450px;
     overflow: hidden;
     position: relative;
+    margin-top: 0; /* Remove any space between navbar & hero */
 }
 
 .hero-image {
@@ -70,10 +60,10 @@ body {
     background-position: center;
 }
 
-/* Hero Title */
+/* Center hero title */
 .hero-title {
     font-family: 'OSP-DIN', sans-serif;
-    font-size: 96px;
+    font-size: 80px;
     color: #eef9e4;
     text-align: center;
     position: absolute;
@@ -82,35 +72,19 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Section Styling */
-.section {
-    padding: 80px 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Alternate Text Justification */
-.left-align { text-align: left; align-items: flex-start; }
-.right-align { text-align: right; align-items: flex-end; }
-
-/* Section Titles */
+/* 🟢 Section Titles (Now Same as Body Font) */
 .section-title {
-    font-family: 'OSP-DIN', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* Expandable Text */
+/* 🟢 Read More / Read Less Fix */
 .full-text {
     display: none;
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
 
-/* Read More / Read Less */
 .read-more, .read-less {
     color: #2f4221;
     cursor: pointer;
@@ -118,47 +92,50 @@ body {
     transition: color 0.3s ease-in-out;
 }
 
-.read-more:hover, .read-less:hover {
-    color: #3a5d25;
-    text-decoration: underline;
+/* Fade in Read More before minimizing height */
+.read-less:hover + .read-more {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Image Divider */
-.image-divider {
+/* 🟢 Contact Section Fixes */
+.copyright {
+    text-align: center;
+    font-size: 10px; /* Make much smaller */
+    margin-top: 20px;
+}
+
+/* Logo Block Layout */
+.logo-block {
     display: flex;
-    width: 100vw;
-    height: 250px;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-end; /* Align to opposite side of contact text */
+    justify-content: flex-end;
 }
 
-.image-divider div {
-    width: 20%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease-in-out;
+/* Cascadian Forestry Text */
+.logo-block h3 {
+    font-family: 'OSP-DIN', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
 }
 
-.image-divider div:hover {
-    transform: scale(1.05);
+/* Logo Image */
+.logo-image {
+    width: calc(50% + 50%); /* Width as wide as both TWS & SAF images */
+    height: auto;
 }
 
-/* Ensure fixed navbar doesn't overlap content */
-body {
-    padding-top: 60px;
-    scroll-behavior: smooth;
+/* Certification Logos (TWS & SAF) */
+.certifications {
+    display: flex;
+    justify-content: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 48px;
-    }
-    .nav-links a {
-        font-size: 14px;
-        margin: 0 5px;
-    }
-    .section {
-        padding: 40px 10px;
-    }
+.small-logo {
+    width: 50%; /* Make half the size */
+    height: auto;
+    margin: 5px;
 }
