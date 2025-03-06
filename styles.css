@@ -16,7 +16,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* 🟢 Navbar Adjustments */
+/* Navbar */
 .nav {
     position: fixed;
     top: 0;
@@ -31,36 +31,27 @@ body {
 }
 
 .nav-links {
-    display: flex;
     flex-grow: 1;
-    justify-content: center; /* Centers navigation items */
+    text-align: center;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 15px;
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #eef9e4;
+    font-size: 18px;
 }
 
-/* 🟢 Hero Section Fixes */
+/* Hero Section */
 .hero {
     display: flex;
     width: 100vw;
     height: 450px;
-    overflow: hidden;
     position: relative;
-    margin-top: 0; /* Remove any space between navbar & hero */
+    margin-top: 0;
+    align-items: center;
 }
 
-.hero-image {
-    width: 33.3%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Center hero title */
 .hero-title {
     font-family: 'OSP-DIN', sans-serif;
     font-size: 80px;
@@ -72,70 +63,20 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* 🟢 Section Titles (Now Same as Body Font) */
-.section-title {
-    font-family: Arial, sans-serif;
-}
-
-/* 🟢 Read More / Read Less Fix */
-.full-text {
-    display: none;
-    max-height: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
-}
-
-.read-more, .read-less {
-    color: #2f4221;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Fade in Read More before minimizing height */
-.read-less:hover + .read-more {
-    display: inline-block;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* 🟢 Contact Section Fixes */
-.copyright {
-    text-align: center;
-    font-size: 10px; /* Make much smaller */
-    margin-top: 20px;
-}
-
-/* Logo Block Layout */
+/* Logo Block */
 .logo-block {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Align to opposite side of contact text */
+    align-items: flex-end;
     justify-content: flex-end;
-}
-
-/* Cascadian Forestry Text */
-.logo-block h3 {
-    font-family: 'OSP-DIN', sans-serif;
-    font-size: 20px;
     text-align: center;
-    width: 100%;
 }
 
-/* Logo Image */
 .logo-image {
-    width: calc(50% + 50%); /* Width as wide as both TWS & SAF images */
-    height: auto;
-}
-
-/* Certification Logos (TWS & SAF) */
-.certifications {
-    display: flex;
-    justify-content: center;
+    width: 200px;
 }
 
 .small-logo {
-    width: 50%; /* Make half the size */
-    height: auto;
+    width: 80px;
     margin: 5px;
 }
