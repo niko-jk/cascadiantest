@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Fix Read More / Read Less Transition
+    // Read More / Read Less Fix
     document.querySelectorAll(".read-more").forEach(button => {
         button.addEventListener("click", function () {
             let target = document.getElementById(this.dataset.target);
             target.style.display = "block";
             target.style.opacity = "1";
             target.style.maxHeight = "1000px";
-            this.style.opacity = "0"; // Fade out read-more smoothly
+            this.style.opacity = "0";
             setTimeout(() => { this.style.display = "none"; }, 300);
         });
     });
@@ -20,8 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 target.style.display = "none";
                 let readMoreButton = document.querySelector(`[data-target='${this.dataset.target}']`);
                 readMoreButton.style.display = "inline";
-                readMoreButton.style.opacity = "1"; // Fade in read-more before section shrinks
+                readMoreButton.style.opacity = "1";
             }, 500);
         });
     });
+
+    // Auto-update copyright year
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
 });
