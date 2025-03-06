@@ -1,144 +1,141 @@
-/* Import Custom Font */
-@font-face {
-    font-family: 'OSP-DIN';
-    src: url('OSP-DIN.ttf') format('truetype');
-}
-
-/* General Styles */
+/* General Page Styling */
 body {
+    background-color: #f5f9f2;
     font-family: Arial, sans-serif;
-    background-color: #eef9e4; /* Slightly greener */
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    color: #2f4221; /* Dark green text */
 }
 
 /* Navigation Bar */
 .nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #eef9e4; /* Light green text */
+    background-color: #f5f9f2;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 15px;
+    font-size: 14px;
 }
 
 .contact-info a {
-    color: #eef9e4; /* Light green */
+    color: black;
     text-decoration: none;
-    font-size: 12px;
+    margin-right: 15px;
 }
 
 .nav-links {
-    flex-grow: 1;
-    text-align: center;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    left: -10%;
 }
 
 .nav-links a {
-    margin: 0 15px;
     text-decoration: none;
-    color: #eef9e4; /* Light green */
-    font-size: 18px;
+    color: black;
 }
 
 /* Hero Section */
 .hero {
     display: flex;
-    width: 100vw;
-    height: 450px;
-    overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
 .hero-image {
-    width: 33.3%;
-    height: 100%;
+    flex: 1;
     background-size: cover;
     background-position: center;
 }
 
-/* Hero Title */
 .hero-title {
-    font-family: 'OSP-DIN', sans-serif;
-    font-size: 96px; /* Increased size */
-    color: #eef9e4; /* Slight green tint */
-    text-align: center;
     position: absolute;
-    top: 50%; /* Vertically centered */
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Section Styling */
-.section {
-    padding: 80px 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Alternate Text Justification */
-.left-align { text-align: left; align-items: flex-start; }
-.right-align { text-align: right; align-items: flex-end; }
-
-/* Section Titles */
-.section-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e6eae2;
     font-family: 'OSP-DIN', sans-serif;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Expandable Text */
-.full-text {
-    display: none;
-    margin-top: 10px;
-    font-size: 18px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+/* Sections */
+.section {
+    padding: 60px 10%;
 }
 
-/* Read More / Read Less */
-.read-more, .read-less {
-    color: #2f4221; /* Dark green text */
-    cursor: pointer;
+.section-title {
+    font-size: 24px;
     font-weight: bold;
 }
 
-.read-more:hover, .read-less:hover {
-    text-decoration: underline;
+.full-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
-/* Image Divider */
+.read-more,
+.read-less {
+    cursor: pointer;
+    color: black;
+}
+
+/* Image Dividers */
 .image-divider {
     display: flex;
-    width: 100vw;
-    height: 250px; /* Adjusted height for square images */
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
-.image-divider div {
-    width: 20%;
+.image-divider img {
+    flex: 1;
+    object-fit: cover;
+    width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-/* Copyright Text */
+/* Contact Section */
+#contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-block {
+    text-align: center;
+}
+
+.logo-image {
+    width: 200px;
+}
+
+.certifications {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.small-logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Copyright */
 .copyright {
     text-align: center;
     font-size: 12px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
