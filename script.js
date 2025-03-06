@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         imageList.push(`photo-${i}.jpg`);
     }
 
-    function getRandomImages(count, minSizeKB = 150) {
-        let validImages = imageList.filter(img => parseInt(img.replace(/\D/g, "")) > minSizeKB);
-        let shuffled = [...validImages].sort(() => 0.5 - Math.random());
+    function getRandomImages(count) {
+        let shuffled = [...imageList].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     }
 
@@ -20,13 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    let heroImages = getRandomImages(3);
+    let usedImages = new Set();
+    function getUniqueImages(count) {
+        let availableImages = imageList.filter(img => !usedImages.has(img));
+        let selected = availableImages.sort(() => 0.5 - Math.random()).slice(0, count);
+        selected.forEach(img => usedImages.add(img));
+        return selected;
+    }
+
+    let heroImages = getUniqueImages(3);
     setImage("hero1", heroImages[0]);
     setImage("hero2", heroImages[1]);
     setImage("hero3", heroImages[2]);
 
     for (let i = 1; i <= 5; i++) {
-        let divImages = getRandomImages(5);
+        let divImages = getUniqueImages(5);
         let divider = document.getElementById(`divider${i}`);
         divider.innerHTML = divImages.map(img => `<div style="background-image: url('images/${img}');"></div>`).join("");
     }
