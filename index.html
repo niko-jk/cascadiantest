@@ -5,106 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascadian Forestry</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <nav class="nav">
+    <!-- Navigation Bar -->
+    <div class="nav">
         <div class="contact-info">
             <a href="tel:5413502712">541-350-2712</a>
             <a href="mailto:cascadian.forestry@gmail.com">cascadian.forestry@gmail.com</a>
         </div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#services">Our Services</a>
             <a href="#expertise">Expertise</a>
             <a href="#wildfire">Wildfire Risk</a>
-            <a href="#climate">Climate & Forest Resilience</a>
+            <a href="#climate">Climate Change</a>
             <a href="#contact">Contact</a>
         </div>
-    </nav>
+    </div>
 
-    <header class="hero">
-        <div id="hero1" class="hero-image"></div>
-        <div id="hero2" class="hero-image"></div>
-        <div id="hero3" class="hero-image"></div>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-image" id="hero1"></div>
+        <div class="hero-image" id="hero2"></div>
+        <div class="hero-image" id="hero3"></div>
         <h1 class="hero-title">Cascadian Forestry</h1>
-    </header>
+    </div>
 
-    <section id="about" class="section left-align">
-        <h2>About</h2>
-        <p class="summary">Cascadian Forestry specializes in forest data collection and analysis to support sustainable land management. [<span class="read-more" data-target="about-content">Read More</span>]</p>
-        <div class="full-text" id="about-content">
-            <p>Cascadian Forestry specializes in data collection and analysis...</p>
-            <div class="logos">
-                <img src="SAF1.png" alt="SAF Logo">
-                <img src="TWS1.png" alt="TWS Logo">
-            </div>
-            <span class="read-less" data-target="about-content">Read Less</span>
+    <!-- Sections -->
+    <div class="section left-align" id="about">
+        <h2 class="section-title">About</h2>
+        <p>Cascadian Forestry specializes in forest data collection and analysis to support sustainable land management.</p>
+        <span class="read-more" data-target="about-text">[Read More]</span>
+        <div class="full-text" id="about-text">
+            <p>Cascadian Forestry specializes in data collection and analysis to support the understanding, management, and preservation of forests for long-term ecosystem health and resilience...</p>
+            <span class="read-less" data-target="about-text">[Read Less]</span>
         </div>
-    </section>
+    </div>
 
-    <div class="image-divider tall-divider" id="divider1"></div>
+    <div class="image-divider" id="divider1"></div>
 
-    <section id="services" class="section right-align">
-        <h2>Our Services</h2>
-        <p class="summary">From forest inventory and wildfire risk assessment to GIS mapping, we offer expert services. [<span class="read-more" data-target="services-content">Read More</span>]</p>
-        <div class="full-text" id="services-content">
+    <div class="section right-align" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p>From forest inventory and wildfire risk assessment to GIS mapping and regulatory compliance...</p>
+        <span class="read-more" data-target="services-text">[Read More]</span>
+        <div class="full-text" id="services-text">
             <p>At Cascadian Forestry, we provide a comprehensive suite of data-driven forestry services...</p>
-            <span class="read-less" data-target="services-content">Read Less</span>
+            <span class="read-less" data-target="services-text">[Read Less]</span>
         </div>
-    </section>
+    </div>
 
-    <div class="image-divider tall-divider" id="divider2"></div>
+    <div class="image-divider" id="divider2"></div>
 
-    <section id="expertise" class="section left-align">
-        <h2>Expertise</h2>
-        <p class="summary">Led by forester and former wildland firefighter Nicholas Kwiatkowski, we bring deep industry knowledge. [<span class="read-more" data-target="expertise-content">Read More</span>]</p>
-        <div class="full-text" id="expertise-content">
+    <div class="section left-align" id="expertise">
+        <h2 class="section-title">Expertise</h2>
+        <p>Led by experienced forester and former wildland firefighter Niko Kwiatkowski...</p>
+        <span class="read-more" data-target="expertise-text">[Read More]</span>
+        <div class="full-text" id="expertise-text">
             <p>Cascadian Forestry is founded and operated by Nicholas Kwiatkowski...</p>
-            <span class="read-less" data-target="expertise-content">Read Less</span>
+            <span class="read-less" data-target="expertise-text">[Read Less]</span>
         </div>
-    </section>
+    </div>
 
-    <div class="image-divider tall-divider" id="divider3"></div>
+    <div class="image-divider" id="divider3"></div>
 
-    <section id="wildfire" class="section right-align">
-        <h2>Wildfire Risk & Mitigation</h2>
-        <p class="summary">Combining field experience with fire science, we help landowners assess fire risks. [<span class="read-more" data-target="wildfire-content">Read More</span>]</p>
-        <div class="full-text" id="wildfire-content">
+    <div class="section right-align" id="wildfire">
+        <h2 class="section-title">Wildfire Risk & Mitigation</h2>
+        <p>Combining field experience with fire science, Cascadian Forestry helps landowners assess fire risks...</p>
+        <span class="read-more" data-target="wildfire-text">[Read More]</span>
+        <div class="full-text" id="wildfire-text">
             <p>With a background in wildland firefighting and forest ecology...</p>
-            <span class="read-less" data-target="wildfire-content">Read Less</span>
+            <span class="read-less" data-target="wildfire-text">[Read Less]</span>
         </div>
-    </section>
+    </div>
 
-    <div class="image-divider tall-divider" id="divider4"></div>
+    <div class="image-divider" id="divider4"></div>
 
-    <section id="climate" class="section left-align">
-        <h2>Climate Change & Forest Resilience</h2>
-        <p class="summary">We integrate climate models and ecological data to guide resilient forest management. [<span class="read-more" data-target="climate-content">Read More</span>]</p>
-        <div class="full-text" id="climate-content">
-            <p>As a Pacific Northwest-based forestry company...</p>
-            <span class="read-less" data-target="climate-content">Read Less</span>
+    <div class="section left-align" id="climate">
+        <h2 class="section-title">Climate Change & Forest Resilience</h2>
+        <p>With climate shifts reshaping Pacific Northwest forests...</p>
+        <span class="read-more" data-target="climate-text">[Read More]</span>
+        <div class="full-text" id="climate-text">
+            <p>As a Pacific Northwest-based forestry company, Cascadian Forestry...</p>
+            <span class="read-less" data-target="climate-text">[Read Less]</span>
         </div>
-    </section>
+    </div>
 
-    <div class="image-divider tall-divider" id="divider5"></div>
+    <div class="image-divider" id="divider5"></div>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Niko Kwiatkowski</p>
-        <p>541-350-2712</p>
-        <p>cascadian.forestry@gmail.com</p>
-        <p>PO 20745 Portland, OR 97294</p>
-        <div class="contact-logo-container">
-            <p class="contact-logo-text">Cascadian Forestry</p>
-            <img src="LogoLarge.png" alt="Company Logo">
-            <div class="logos">
-                <img src="SAF1.png" alt="SAF Logo">
-                <img src="TWS1.png" alt="TWS Logo">
+    <div class="section right-align" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>Niko Kwiatkowski, Owner / Operator<br>Cascadian Forestry, LLC<br>PO Box 20745<br>Portland, OR 97294</p>
+        <div class="logo-block">
+            <h3 class="section-title">Cascadian Forestry</h3>
+            <img src="LogoLarge.png" class="logo-image">
+            <div class="certifications">
+                <img src="SAF1.png" class="small-logo">
+                <img src="TWS1.png" class="small-logo">
             </div>
         </div>
-    </section>
+    </div>
 
-    <script src="script.js"></script>
+    <p class="copyright">© <span id="copyright-year"></span> Cascadian Forestry, LLC. All images copyright Cascadian Forestry. Contact us for usage or photography inquiries.</p>
+
 </body>
 </html>
