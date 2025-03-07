@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Read More / Read Less Fix
     document.querySelectorAll(".read-more").forEach(button => {
         button.addEventListener("click", function () {
             let target = document.getElementById(this.dataset.target);
@@ -25,6 +24,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Auto-update copyright year
     document.getElementById("copyright-year").textContent = new Date().getFullYear();
 });
