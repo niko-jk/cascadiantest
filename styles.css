@@ -80,3 +80,10 @@ body {
     width: 80px;
     margin: 5px;
 }
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 20px;
+}
