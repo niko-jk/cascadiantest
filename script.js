@@ -5,21 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
             target.style.display = "block";
             target.style.opacity = "1";
             target.style.maxHeight = "1000px";
-            this.style.opacity = "0";
-            setTimeout(() => { this.style.display = "none"; }, 300);
+            this.style.display = "none";
         });
     });
 
     document.querySelectorAll(".read-less").forEach(button => {
         button.addEventListener("click", function () {
             let target = document.getElementById(this.dataset.target);
+            target.style.maxHeight = "0px";
             target.style.opacity = "0";
             setTimeout(() => {
-                target.style.maxHeight = "0px";
                 target.style.display = "none";
-                let readMoreButton = document.querySelector(`[data-target='${this.dataset.target}']`);
-                readMoreButton.style.display = "inline";
-                readMoreButton.style.opacity = "1";
+                document.querySelector(`[data-target='${this.dataset.target}']`).style.display = "inline";
             }, 500);
         });
     });
