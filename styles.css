@@ -1,0 +1,51 @@
+/* Ensure better mobile compatibility */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 48px; /* Adjust for mobile */
+    }
+    .nav-links a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    .section {
+        padding: 40px 10px;
+    }
+}
+
+/* Ensure fixed navbar doesn't overlap content */
+body {
+    padding-top: 60px; 
+    scroll-behavior: smooth;
+}
+
+/* Improve expand/collapse transition */
+.full-text {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.image-divider div {
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-divider div:hover {
+    transform: scale(1.05);
+}
+
+/* Optimize font loading */
+@font-face {
+    font-family: 'OSP-DIN';
+    src: url('OSP-DIN.ttf') format('truetype');
+    font-display: swap; /* Prevents invisible text */
+}
+
+/* Improve button hover */
+.read-more, .read-less {
+    transition: color 0.3s ease-in-out;
+}
+
+.read-more:hover, .read-less:hover {
+    color: #3a5d25;
+}
