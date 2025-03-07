@@ -1,69 +1,51 @@
-/* Import Custom Font */
-@font-face {
-    font-family: 'OSP-DIN';
-    src: url('OSP-DIN.ttf') format('truetype');
-    font-display: swap;
+/* Ensure better mobile compatibility */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 48px; /* Adjust for mobile */
+    }
+    .nav-links a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    .section {
+        padding: 40px 10px;
+    }
 }
 
-/* General Styles */
+/* Ensure fixed navbar doesn't overlap content */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eef9e4;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    color: #2f4221;
+    padding-top: 60px; 
     scroll-behavior: smooth;
 }
 
-/* Navbar */
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #eef9e4;
-    z-index: 1000;
+/* Improve expand/collapse transition */
+.full-text {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.nav-links {
-    flex-grow: 1;
-    text-align: center;
+.image-divider div {
+    transition: transform 0.3s ease-in-out;
 }
 
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #eef9e4;
-    font-size: 18px;
+.image-divider div:hover {
+    transform: scale(1.05);
 }
 
-/* Hero Section */
-.hero {
-    display: flex;
-    width: 100vw;
-    height: 450px;
-    position: relative;
+/* Optimize font loading */
+@font-face {
+    font-family: 'OSP-DIN';
+    src: url('OSP-DIN.ttf') format('truetype');
+    font-display: swap; /* Prevents invisible text */
 }
 
-.hero-title {
-    font-family: 'OSP-DIN', sans-serif;
-    font-size: 80px;
-    color: #eef9e4;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Improve button hover */
+.read-more, .read-less {
+    transition: color 0.3s ease-in-out;
 }
 
-/* Copyright */
-.copyright {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
+.read-more:hover, .read-less:hover {
+    color: #3a5d25;
 }
