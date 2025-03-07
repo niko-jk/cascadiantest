@@ -48,8 +48,6 @@ body {
     width: 100vw;
     height: 450px;
     position: relative;
-    margin-top: 0;
-    align-items: center;
 }
 
 .hero-title {
@@ -63,27 +61,9 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Logo Block */
-.logo-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    text-align: center;
-}
-
-.logo-image {
-    width: 200px;
-}
-
-.small-logo {
-    width: 80px;
-    margin: 5px;
-}
-
 /* Copyright */
 .copyright {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 20px;
 }
